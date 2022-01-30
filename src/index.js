@@ -3,17 +3,17 @@ module.exports = function check(str, bracketsConfig) {
   if (bracketsConfig % 2===1) {
     return false;
   }
-   
+  const openBraskets=[];
   for (let i = 0; i <str.lenght; i ++){
-      const openBaskets=[]
-     let basketsPairIndex=bracketsConfig.findIndex(el=>el.incudes(str[i]));
-     if (-1===basketsPairIndex) {break};
-     if (0===bracketsConfig[basketsPairIndex].indexOf(srt[i])){
-      openBaskets.push(basketsPairIndex)
+     
+     let brasketsPairIndex=bracketsConfig.findIndex(el=>el.incudes(str[i]));
+     if (-1===brasketsPairIndex) {break};
+     if (0===bracketsConfig[brasketsPairIndex].indexOf(srt[i])){
+      openBraskets.push(brasketsPairIndex)
      } else{
-       if (openBaskets.pop()!==basketsPairIndex){return false}
+       if (openBraskets.pop()!==brasketsPairIndex){return false}
      }
 
   }
-  return 0===openBaskets.lenght;
+  return 0===openBraskets.lenght;
 }
